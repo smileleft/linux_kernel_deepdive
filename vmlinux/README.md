@@ -63,3 +63,9 @@ make vmlinux
 
 ## 4. vmlinux vs bzImage vs zImage
 
+- vmlinux : ELF 포맷, 압축 안됨, 디버깅/분석 용도
+- zImage : 압축된 vmlinux + decompress 코드
+- bzImage : zImage의 확장형, 2MB 이상 용량 지원, 실제 부팅에 사용됨
+- vmlinuz : 보통 bzImage 의 심볼릭 링크
+
+즉, 부팅 시에는 vmlinux 가 아니라 bzImage나 zImage를 로드하고 메모리 상에서 압축해제 후 실행함
