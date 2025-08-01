@@ -41,3 +41,25 @@ vmlinux는 ELF 실행파일이기 때문에 다음과 같은 세그먼트/섹션
   [ 4] .bss             NOBITS       ffffffff82600000  600000
   [ 5] .symtab          SYMTAB       0000000000000000  800000
 ```
+
+## 3. vmlinux 생성 과정
+
+리눅스 커널 빌드 시 다음과 같은 과정으로 생성
+
+~~~
+make vmlinux
+~~~
+
+- .o 오브젝트 파일 컴파일됨
+- ld (GNU linker)에 의해 ELF 포맷으로 링크됨
+- vmlinux ELF 파일 생성
+
+다음은 Makefile 에서의 처리과정
+
+~~~
+-> .c 파일들을 .o 로 컴파일 (cc)
+-> ld 가 .o 들을 링크 -> vmlinux
+~~~
+
+## 4. vmlinux vs bzImage vs zImage
+
