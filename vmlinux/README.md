@@ -30,3 +30,13 @@ vmlinux는 ELF 실행파일이기 때문에 다음과 같은 세그먼트/섹션
 - .debug_* : 디버깅 정보 (GDB, DWARF 형식)
 - .init.text, .exit.text : 커널 초기화/해제용 코드
 - .kallsyms : 커널 심볼 목록 (주소 <-> 함수명 매)
+
+### 예시 - readelf -S vmlinux 결과의 일부
+,,,
+  [Nr] Name             Type         Address           Offset
+  [ 1] .text            PROGBITS     ffffffff81000000  000100
+  [ 2] .rodata          PROGBITS     ffffffff82200000  1f0000
+  [ 3] .data            PROGBITS     ffffffff82400000  400000
+  [ 4] .bss             NOBITS       ffffffff82600000  600000
+  [ 5] .symtab          SYMTAB       0000000000000000  800000
+  ...
