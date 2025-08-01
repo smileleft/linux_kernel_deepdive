@@ -69,3 +69,30 @@ make vmlinux
 - vmlinuz : 보통 bzImage 의 심볼릭 링크
 
 즉, 부팅 시에는 vmlinux 가 아니라 bzImage나 zImage를 로드하고 메모리 상에서 압축해제 후 실행함
+
+## 5. vmlinux 활용 사례
+
+### GDB로 커널 디버깅
+
+~~~
+gdb vmlinux
+(gdb) list *0xffffffff81000000
+~~~
+
+### 심볼 확인(objdump, nm)
+
+~~~
+nm -n vmlinux | grep syscall
+~~~
+
+### ftrace, perf, eBPF 의 심볼 참조
+
+~~~
+cat /proc/kallsyms
+~~~
+
+### crash 유틸리티
+
+~~~
+crash vmlinux vmcore
+~~~
