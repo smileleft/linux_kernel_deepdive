@@ -32,6 +32,7 @@ vmlinux는 ELF 실행파일이기 때문에 다음과 같은 세그먼트/섹션
 - .kallsyms : 커널 심볼 목록 (주소 <-> 함수명 매)
 
 ### 예시 - readelf -S vmlinux 결과의 일부
+
 ```
   [Nr] Name             Type         Address           Offset
   [ 1] .text            PROGBITS     ffffffff81000000  000100
