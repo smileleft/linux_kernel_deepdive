@@ -96,3 +96,14 @@ cat /proc/kallsyms
 ~~~
 crash vmlinux vmcore
 ~~~
+
+## 6. vmlinux 파일 확인 명령어
+
+~~~
+file vmlinux
+readelf -h vmlinux         # ELF 헤더 보기
+readelf -S vmlinux         # 섹션 목록
+nm -n vmlinux              # 심볼 주소 정렬 출력
+objdump -d vmlinux         # 어셈블리 디스어셈블
+gdb vmlinux                # 디버깅
+~~~
